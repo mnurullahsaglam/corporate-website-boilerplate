@@ -7,8 +7,9 @@ use App\Models\Setting;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Tables\Table;
 use Filament\Tables;
+use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 
 class SettingResource extends Resource
 {
@@ -30,13 +31,13 @@ class SettingResource extends Resource
                     ->label('Anahtar')
                     ->required()
                     ->maxLength(100)
-                    ->hidden(fn(string $operation) => $operation === 'edit'),
+                    ->hidden(fn (string $operation) => $operation === 'edit'),
 
                 TextInput::make('title')
                     ->label('Başlık')
                     ->required()
                     ->maxLength(100)
-                    ->disabled(fn(string $operation) => $operation === 'edit'),
+                    ->disabled(fn (string $operation) => $operation === 'edit'),
 
                 TextInput::make('value')
                     ->label('Değer')
@@ -73,10 +74,10 @@ class SettingResource extends Resource
 
     public static function canCreate(): bool
     {
-        return auth()->user()->email === 'nurullahsl87@gmail.com';
+        return false;
     }
 
-    public static function canDelete($record): bool
+    public static function canDelete(Model $record): bool
     {
         return false;
     }

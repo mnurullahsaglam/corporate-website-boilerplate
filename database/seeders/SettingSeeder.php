@@ -21,12 +21,12 @@ class SettingSeeder extends Seeder
             [
                 'title' => 'Sayfa Açıklaması',
                 'key' => 'description',
-                'value' => config('app.name') . ' - ' . config('app.description'),
+                'value' => config('app.name').' - '.config('app.description'),
             ],
             [
                 'title' => 'Anahtar Kelimeler',
                 'key' => 'keywords',
-                'value' => config('app.name') . ', ' . config('app.keywords'),
+                'value' => config('app.name').', '.config('app.keywords'),
             ],
             [
                 'title' => 'Telefon Numarası',
@@ -36,7 +36,7 @@ class SettingSeeder extends Seeder
             [
                 'title' => 'E-Posta Adresi',
                 'key' => 'email',
-                'value' => 'info@' . config('app.name') . '.com',
+                'value' => 'info@'.config('app.name').'.com',
             ],
             [
                 'title' => 'Adres',
