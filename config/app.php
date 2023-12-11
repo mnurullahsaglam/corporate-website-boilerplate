@@ -70,7 +70,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Europe/Istanbul',
 
     /*
     |--------------------------------------------------------------------------
@@ -83,7 +83,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'tr',
 
     /*
     |--------------------------------------------------------------------------
@@ -109,7 +109,7 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
+    'faker_locale' => 'tr_TR',
 
     /*
     |--------------------------------------------------------------------------
@@ -156,17 +156,10 @@ return [
     */
 
     'providers' => ServiceProvider::defaultProviders()->merge([
-        /*
-         * Package Service Providers...
-         */
-
-        /*
-         * Application Service Providers...
-         */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
+        App\Providers\Filament\AdminPanelProvider::class,
         App\Providers\RouteServiceProvider::class,
     ])->toArray(),
 
