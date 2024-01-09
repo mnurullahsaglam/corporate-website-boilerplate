@@ -2,12 +2,13 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\SettingResource\Pages;
+use App\Filament\Resources\SettingResource\Pages\ListSettings;
 use App\Models\Setting;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Tables;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 
@@ -50,25 +51,25 @@ class SettingResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('title')
+                TextColumn::make('title')
                     ->label('Başlık')
                     ->searchable()
                     ->sortable(),
 
-                Tables\Columns\TextColumn::make('value')
+                TextColumn::make('value')
                     ->label('Değer')
                     ->searchable()
                     ->sortable(),
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                EditAction::make(),
             ]);
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListSettings::route('/'),
+            'index' => ListSettings::route('/'),
         ];
     }
 
