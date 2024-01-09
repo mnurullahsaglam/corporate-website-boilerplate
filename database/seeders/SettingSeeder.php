@@ -36,7 +36,7 @@ class SettingSeeder extends Seeder
             [
                 'title' => 'E-Posta Adresi',
                 'key' => 'email',
-                'value' => 'info@'.config('app.name').'.com',
+                'value' => 'info@'.str(config('app.name'))->lower()->ascii()->kebab().'.com',
             ],
             [
                 'title' => 'Adres',
